@@ -67,6 +67,7 @@ int main(int argc, char **argv){
   Robot robot(ev3dev::OUTPUT_A,ev3dev::OUTPUT_D,2.25);
 
   std::string node_name = ros::this_node::getName();
+  node_name.erase(0,1);
 
   ros::Subscriber cmd_vel = node.subscribe("cmd_vel_"+node_name,2,
 					   &Robot::setVelocity, &robot);
