@@ -68,7 +68,7 @@ int main(int argc, char **argv){
 
   std::string node_name = ros::this_node::getName();
 
-  ros::Subscriber cmd_vel = node.subscribe("cmd_vel",2,
+  ros::Subscriber cmd_vel = node.subscribe("cmd_vel_"+node_name,2,
 					   &Robot::setVelocity, &robot);
 
   ros::spin();
